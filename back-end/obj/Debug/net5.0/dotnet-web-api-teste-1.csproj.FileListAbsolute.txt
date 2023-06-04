@@ -56,3 +56,11 @@
 /home/bruno/Job_Interview_Projects/url-time-response/back-end/obj/Debug/net5.0/ref/dotnet-web-api-teste-1.dll
 /home/bruno/Job_Interview_Projects/url-time-response/back-end/obj/Debug/net5.0/dotnet-web-api-teste-1.pdb
 /home/bruno/Job_Interview_Projects/url-time-response/back-end/obj/Debug/net5.0/dotnet-web-api-teste-1.genruntimeconfig.cache
+/home/bruno/Job_Interview_Projects/url-time-response/back-end/bin/Debug/net5.0/Microsoft.AspNetCore.Authentication.JwtBearer.dll
+/home/bruno/Job_Interview_Projects/url-time-response/back-end/bin/Debug/net5.0/Microsoft.IdentityModel.Abstractions.dll
+/home/bruno/Job_Interview_Projects/url-time-response/back-end/bin/Debug/net5.0/Microsoft.IdentityModel.JsonWebTokens.dll
+/home/bruno/Job_Interview_Projects/url-time-response/back-end/bin/Debug/net5.0/Microsoft.IdentityModel.Logging.dll
+/home/bruno/Job_Interview_Projects/url-time-response/back-end/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.dll
+/home/bruno/Job_Interview_Projects/url-time-response/back-end/bin/Debug/net5.0/Microsoft.IdentityModel.Protocols.OpenIdConnect.dll
+/home/bruno/Job_Interview_Projects/url-time-response/back-end/bin/Debug/net5.0/Microsoft.IdentityModel.Tokens.dll
+/home/bruno/Job_Interview_Projects/url-time-response/back-end/bin/Debug/net5.0/System.IdentityModel.Tokens.Jwt.dll

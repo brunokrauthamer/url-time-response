@@ -11,6 +11,7 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using ResponseTime.Services;
 
 namespace back_end
 {
@@ -28,6 +29,7 @@ namespace back_end
         {
 
             services.AddControllers();
+            services.AddScoped<IResponseTimeService, ResponseTimeService>();
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "back_end", Version = "v1" });

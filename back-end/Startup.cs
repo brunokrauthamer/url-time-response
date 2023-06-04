@@ -11,7 +11,6 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
-using MyProject.Services;
 using ResponseTime.Services;
 
 namespace dotnet_web_api_teste_1
@@ -30,7 +29,6 @@ namespace dotnet_web_api_teste_1
         {
 
             services.AddControllers();
-            services.AddScoped<IMyService, MyService>();
             services.AddScoped<IResponseTimeService, ResponseTimeService>();
             services.AddSwaggerGen(c =>
             {

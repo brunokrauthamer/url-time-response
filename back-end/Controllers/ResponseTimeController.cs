@@ -14,8 +14,8 @@ namespace ResponseTime.Controllers
             _reponseTimeService = responseTimeService;
         }
 
-        [HttpGet("{url}")]
-        public IActionResult Get(string url)
+        [HttpGet]
+        public IActionResult Get([FromQuery(Name = "url")] string url)
         {
             var responseTimeInfo = _reponseTimeService.GetResponseTimeInfo(url);
             return Ok(responseTimeInfo);

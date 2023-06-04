@@ -6,5 +6,5 @@ build_property.ProjectTypeGuids =
 build_property.PublishSingleFile = 
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
-build_property.RootNamespace = back_end
+build_property.RootNamespace = dotnet_web_api_teste_1
 build_property.ProjectDir = /home/bruno/Job_Interview_Projects/url-time-response/back-end/

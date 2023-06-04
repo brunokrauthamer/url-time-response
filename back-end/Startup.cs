@@ -11,9 +11,10 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using MyProject.Services;
 using ResponseTime.Services;
 
-namespace back_end
+namespace dotnet_web_api_teste_1
 {
     public class Startup
     {
@@ -29,10 +30,11 @@ namespace back_end
         {
 
             services.AddControllers();
+            services.AddScoped<IMyService, MyService>();
             services.AddScoped<IResponseTimeService, ResponseTimeService>();
             services.AddSwaggerGen(c =>
             {
-                c.SwaggerDoc("v1", new OpenApiInfo { Title = "back_end", Version = "v1" });
+                c.SwaggerDoc("v1", new OpenApiInfo { Title = "dotnet_web_api_teste_1", Version = "v1" });
             });
         }
 
@@ -43,7 +45,7 @@ namespace back_end
             {
                 app.UseDeveloperExceptionPage();
                 app.UseSwagger();
-                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "back_end v1"));
+                app.UseSwaggerUI(c => c.SwaggerEndpoint("/swagger/v1/swagger.json", "dotnet_web_api_teste_1 v1"));
             }
 
             app.UseHttpsRedirection();

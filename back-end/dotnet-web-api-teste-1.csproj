@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <TargetFramework>net5.0</TargetFramework>
-    <RootNamespace>back_end</RootNamespace>
+    <RootNamespace>dotnet_web_api_teste_1</RootNamespace>
   </PropertyGroup>
 
   <ItemGroup>

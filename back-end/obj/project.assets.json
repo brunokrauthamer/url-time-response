@@ -198,9 +198,9 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/home/bruno/Job_Interview_Projects/url-time-response/back-end/back-end.csproj",
-      "projectName": "back-end",
-      "projectPath": "/home/bruno/Job_Interview_Projects/url-time-response/back-end/back-end.csproj",
+      "projectUniqueName": "/home/bruno/Job_Interview_Projects/url-time-response/back-end/dotnet-web-api-teste-1.csproj",
+      "projectName": "dotnet-web-api-teste-1",
+      "projectPath": "/home/bruno/Job_Interview_Projects/url-time-response/back-end/dotnet-web-api-teste-1.csproj",
       "packagesPath": "/home/bruno/.nuget/packages/",
       "outputPath": "/home/bruno/Job_Interview_Projects/url-time-response/back-end/obj/",
       "projectStyle": "PackageReference",

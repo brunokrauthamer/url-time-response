@@ -1,6 +1,6 @@
-namespace ResponseTime.Services
+namespace ResponseTime.Models
 {
-    public class ResponseTimeInfo
+    public class ResponseTimeModel
     {
         public string ResponseTime { get; set; }
         public string Url { get; set; }

@@ -1,12 +1,13 @@
 using System;
 using System.Diagnostics;
 using System.Net;
+using ResponseTime.Models;
 
 namespace ResponseTime.Services
 {
     public class ResponseTimeService : IResponseTimeService
     {
-        public ResponseTimeInfo GetResponseTimeInfo(string url)
+        public ResponseTimeModel GetResponseTimeInfo(string url)
         {
             var stopwatch = new Stopwatch();
             stopwatch.Start();
@@ -20,7 +21,7 @@ namespace ResponseTime.Services
                     stopwatch.Stop();
                     TimeSpan responseTime = stopwatch.Elapsed;
 
-                    var responseTimeInfo = new ResponseTimeInfo
+                    var responseTimeInfo = new ResponseTimeModel
                     {
                         ResponseTime = responseTime.TotalMilliseconds + "ms",
                         Url = url,
@@ -35,7 +36,7 @@ namespace ResponseTime.Services
                 stopwatch.Stop();
                 TimeSpan responseTime = stopwatch.Elapsed;
 
-                var responseTimeInfo = new ResponseTimeInfo
+                var responseTimeInfo = new ResponseTimeModel
                 {
                     ResponseTime = responseTime.TotalMilliseconds + "ms",
                     Url = url,

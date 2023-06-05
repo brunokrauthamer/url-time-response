@@ -1,7 +1,9 @@
+using ResponseTime.Models;
+
 namespace ResponseTime.Services
 {
     public interface IResponseTimeService
     {
-        ResponseTimeInfo GetResponseTimeInfo(string url);
+        ResponseTimeModel GetResponseTimeInfo(string url);
     }
 }

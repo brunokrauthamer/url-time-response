@@ -12,7 +12,7 @@ namespace ResponseTime.Services
         public static string GenerateToken(User user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes("your_secret_key_here"); // Chave secreta para a assinatura do token
+            var key = Encoding.ASCII.GetBytes("secret_keyXzXYzRG5DqnTLmzGfWZvjmJtMfg85x+oQ6XdQOhJ3Pw="); // Chave secreta para a assinatura do token
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new[]

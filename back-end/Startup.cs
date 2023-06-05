@@ -31,7 +31,7 @@ namespace dotnet_web_api_teste_1
         public void ConfigureServices(IServiceCollection services)
         {
             // Configuração do JWT
-            var key = Encoding.ASCII.GetBytes("your_secret_key_here"); // Chave secreta para a assinatura do token
+            var key = Encoding.ASCII.GetBytes("secret_keyXzXYzRG5DqnTLmzGfWZvjmJtMfg85x+oQ6XdQOhJ3Pw="); // Chave secreta para a assinatura do token
             services.AddAuthentication(options =>
             {
                 options.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;

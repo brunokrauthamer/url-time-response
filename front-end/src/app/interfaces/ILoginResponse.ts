@@ -1,7 +1,7 @@
 import { IUser } from "./IUser";
 
 export interface ILoginResponse {
-    user: IUser
+    user?: IUser
     token: string
     statusCode: number
 };

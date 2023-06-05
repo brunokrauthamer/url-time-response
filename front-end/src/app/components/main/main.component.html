@@ -1,1 +1,34 @@
-<p>main works!</p>
+<div class="container">
+    <form>
+        <label for="url-search">
+            URL
+            <input type="text" class="input-url-search" [(ngModel)]="url" name="url" id="url-search"
+                placeholder="Insira a URL">
+        </label>
+        <button (click)="searchUrl()">
+            Pesquisar
+        </button>
+    </form>
+    <table>
+        <thead>
+            <tr>
+                <th>URL Pesquisada</th>
+                <th>Houve Resposta?</th>
+                <th>Tempo de resposta / falha</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Data 1</td>
+                <td>Data 2</td>
+                <td>Data 3</td>
+            </tr>
+        </tbody>
+    </table>
+    <h3>Histórico de pesquisa:</h3>
+    <ul>
+        <li *ngFor="let url of searchedUrls" (click)="savedUrlSearch($event)">
+            {{ url }}
+        </li>
+    </ul>
+</div>

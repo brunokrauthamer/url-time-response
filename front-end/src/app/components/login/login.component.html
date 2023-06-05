@@ -13,5 +13,6 @@
         <button (click)="login()">
             Login
         </button>
+        <p class="invalid-credentials-message" *ngIf="invalidCredentialsMessage">Usuário ou senha inválidos</p>
     </form>
 </div>

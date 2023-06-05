@@ -10,15 +10,14 @@ export class LoginService {
 
   constructor() { }
 
-  static async login(credentials: ICredentials): Promise<ILoginResponse | any> {
+  static async login(credentials: ICredentials): Promise<ILoginResponse> {
     try {
-      const url: string = "https://localhost:5001/login";
+      const url: string = 'https://localhost:5001/login';
       const response: AxiosResponse = await axios.post(url, credentials);
       return { ...response.data, statusCode: response.status }
     }
     catch (error: any) {
-      console.log(error.response.request.status)
-      return error;
+      return { token: '', statusCode: error.response.request.status };
     }
   }
 }

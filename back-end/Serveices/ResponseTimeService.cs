@@ -38,7 +38,7 @@ namespace ResponseTime.Services
 
                 var responseTimeInfo = new ResponseTimeModel
                 {
-                    ResponseTime = responseTime.TotalMilliseconds + "ms",
+                    ResponseTime = responseTime.TotalMilliseconds + " ms",
                     Url = url,
                     Responded = false
                 };

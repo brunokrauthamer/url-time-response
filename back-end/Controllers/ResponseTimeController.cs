@@ -1,4 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Authorization;
 using ResponseTime.Services;
 
 namespace ResponseTime.Controllers
@@ -15,6 +16,7 @@ namespace ResponseTime.Controllers
         }
 
         [HttpGet]
+        [Authorize]
         public IActionResult Get([FromQuery(Name = "url")] string url)
         {
             var responseTimeInfo = _reponseTimeService.GetResponseTimeInfo(url);

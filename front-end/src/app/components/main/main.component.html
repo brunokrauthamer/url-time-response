@@ -6,7 +6,7 @@
             <input type="text" class="input-url-search" [(ngModel)]="url" name="url" id="url-search"
                 placeholder="Insira a URL">
         </label>
-        <button (click)="searchUrl()" class="button-search">
+        <button (click)="searchTypedUrl()" class="button-search">
             Pesquisar
         </button>
     </form>
@@ -20,17 +20,17 @@
         </thead>
         <tbody>
             <tr>
-                <td>Data 1</td>
-                <td>Data 2</td>
-                <td>Data 3</td>
+                <td>{{ displayedResponseData.url }}</td>
+                <td>{{ displayedResponseData.responded }}</td>
+                <td>{{ displayedResponseData.responseTime }}</td>
             </tr>
         </tbody>
     </table>
     <h3>Histórico de pesquisa:</h3>
     <ul>
-        <li *ngFor="let url of searchedUrls" (click)="savedUrlSearch($event)">
+        <li *ngFor="let url of searchedUrls" (click)="searchSavedUrl($event)">
             {{ url }}
         </li>
     </ul>
-    <button class="logout-button">Logout</button>
+    <button class="logout-button" (click)="onLogout()">Logout</button>
 </div>

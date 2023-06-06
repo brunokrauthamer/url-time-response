@@ -1,11 +1,12 @@
 <div class="container">
+    <h2>Tempo de Resposta para URL</h2>
     <form>
         <label for="url-search">
-            URL
+            <h3>URL</h3>
             <input type="text" class="input-url-search" [(ngModel)]="url" name="url" id="url-search"
                 placeholder="Insira a URL">
         </label>
-        <button (click)="searchUrl()">
+        <button (click)="searchUrl()" class="button-search">
             Pesquisar
         </button>
     </form>
@@ -31,4 +32,5 @@
             {{ url }}
         </li>
     </ul>
+    <button class="logout-button">Logout</button>
 </div>

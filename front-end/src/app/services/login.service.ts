@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
 import { ICredentials } from '../interfaces/ICredentials';
 import { ILoginResponse } from '../interfaces/ILoginResponse';
-import axios, { AxiosResponse, AxiosError } from 'axios';
+import axios, { AxiosResponse } from 'axios';
 
 @Injectable({
   providedIn: 'root'

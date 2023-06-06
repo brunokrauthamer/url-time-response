@@ -25,6 +25,14 @@ export class MainComponent {
   searchedUrls: string[] = [];
 
   async searchUrl(): Promise<void> {
+    if (this.searchedUrls.includes(this.url)) {
+      this.searchedUrls = this.searchedUrls.filter((u) => u !== this.url)
+    } else if
+      (this.searchedUrls.length === 3) {
+      this.searchedUrls.pop();
+    }
+    this.searchedUrls.unshift(this.url);
+
     const token: string | null = localStorage.getItem('token');
 
     if (!token) {
@@ -41,20 +49,7 @@ export class MainComponent {
     }
   }
 
-  async searchTypedUrl(): Promise<void> {
-
-    if (this.searchedUrls.length === 3) {
-      this.searchedUrls.pop();
-    }
-    this.searchedUrls.unshift(this.url);
-
-    const token: string | null = localStorage.getItem('token');
-
-    await this.searchUrl();
-  }
-
   async searchSavedUrl(event: any): Promise<void> {
-    console.log(event.target.innerText);
     this.url = event.target.innerText;
     await this.searchUrl();
   }

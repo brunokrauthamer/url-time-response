@@ -7,8 +7,14 @@ namespace ResponseTime.Services
 {
     public class ResponseTimeService : IResponseTimeService
     {
+        /// <summary>
+        /// Determina se uma url está disponível e o tempo de resposta em ms.
+        /// </summary>
+        /// <param name="url">string url a ser testada</param>
+        /// <returns>Objeto contendo a própria url, um booleano dizendo se houve ou não resposta e o tempo de resposta.</returns>
         public ResponseTimeModel GetResponseTimeInfo(string url)
         {
+            // System Disgnostics namespace
             var stopwatch = new Stopwatch();
             stopwatch.Start();
 

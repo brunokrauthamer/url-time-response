@@ -50,6 +50,17 @@ namespace dotnet_web_api_teste_1
                 };
             });
 
+            services.AddCors(options =>
+            {
+                options.AddDefaultPolicy(builder =>
+                {
+                    builder.WithOrigins("http://localhost:4200")
+                        .AllowAnyHeader()
+                        .AllowAnyMethod();
+                });
+            });
+
+            
             services.AddControllers();
             services.AddScoped<IResponseTimeService, ResponseTimeService>();
             services.AddSwaggerGen(c =>
@@ -69,6 +80,8 @@ namespace dotnet_web_api_teste_1
             }
 
             app.UseHttpsRedirection();
+
+            app.UseCors();
 
             app.UseRouting();
 

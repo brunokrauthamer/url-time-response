@@ -5,6 +5,7 @@ namespace ResponseTime.Repositories
 {
     static public class UserRepository
     {
+        // Cria uma lista com as credenciais cadastradas e retorna o usuário caso exista e null caso não exista
         public static User Get(string username, string password)
         {
             var users = new List<User>();

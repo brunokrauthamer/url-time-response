@@ -9,6 +9,11 @@ namespace ResponseTime.Services
 {
     public static class TokenService
     {
+        /// <summary>
+        /// Gerador de token usando JWT.
+        /// </summary>
+        /// <param name="User user">Credenciais do usuário no formato User</param>
+        /// <returns>string token</returns>
         public static string GenerateToken(User user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();

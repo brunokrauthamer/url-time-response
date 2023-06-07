@@ -24,7 +24,7 @@ All files were developed by me.
 3. Enter the back-end folder and run the following commands:
  - `dotnet restore` to restore all the back-end dependencies;
  - `dotnet run` to run the server;
-4. Enter the front-end folder and run the followind commands:
+4. Enter the front-end folder and run the following commands:
  - `npm install` to install all the front-end dependencies;
  - `ng serve` to launch the application
 5. You are ready to navigate at `http://localhost:4200/`.

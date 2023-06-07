@@ -19,7 +19,7 @@ The project is an informative website that offers a simple and user-friendly sol
 All files were developed by me.
 
 ## How to run the project:
-1. Make sure you have .NET and Node.js installed
+1. Make sure you have .NET (v5 or higher) and Node.js (v16 or higher) installed
 2. Git clone this repository.
 3. Enter the back-end folder and run the following commands:
  - `dotnet restore` to restore all the back-end dependencies;

@@ -4,33 +4,41 @@
         <label for="url-search">
             <h3>URL</h3>
             <input type="text" class="input-url-search" [(ngModel)]="url" name="url" id="url-search"
-                placeholder="Insira a URL">
+                placeholder="Insira a URL" (ngModelChange)="handleUrlChange()">
         </label>
-        <button (click)="searchUrl()" class="button-search">
-            Pesquisar
-        </button>
+        <div class="search-container">
+            <button (click)="searchUrl()" class="button-search" [disabled]="isButtonDisabled">
+                Pesquisar
+            </button>
+            <div class="loading-icon">
+                <div *ngIf="loading">
+                    <i class="fas fa-spinner fa-spin fa-2x icon"></i>
+                </div>
+            </div>
+        </div>
     </form>
     <table>
         <thead>
             <tr>
                 <th>URL Pesquisada</th>
                 <th>Houve Resposta?</th>
-                <th>Tempo de resposta / falha</th>
+                <th>Tempo de Resposta / Falha</th>
+                <th>Data da Requisição</th>
             </tr>
         </thead>
-        <tbody>
-            <tr>
-                <td>{{ displayedResponseData.url }}</td>
-                <td>{{ displayedResponseData.responded }}</td>
-                <td>{{ displayedResponseData.responseTime }}</td>
+        <tbody *ngFor="let info of searchedInfo; let i = index">
+            <tr [ngClass]="{'first-row': i === 0}">
+                <td (click)="searchSavedUrl($event)" class="history-url">{{ info.url }}</td>
+                <td>{{ info.responded }}</td>
+                <td>{{ info.responseTime }}</td>
+                <td>{{ info.date }}</td>
             </tr>
         </tbody>
     </table>
-    <h3>Histórico de pesquisa:</h3>
-    <ul>
-        <li *ngFor="let url of searchedUrls" (click)="searchSavedUrl($event)">
-            {{ url }}
+    <!-- <ul>
+        <li *ngFor="let info of searchedInfo" (click)="searchSavedUrl($event)">
+            {{ info.url }}
         </li>
-    </ul>
+    </ul> -->
     <button class="logout-button" (click)="onLogout()">Logout</button>
 </div>

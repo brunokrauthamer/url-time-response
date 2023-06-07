@@ -15,23 +15,36 @@ export class MainComponent {
   constructor(private router: Router) { }
 
   url: string = '';
+  urlToRequest: string = '';
+
+  isButtonDisabled: boolean = true;
+
+  loading: boolean = false;
+
+  handleUrlChange() {
+    const urlRegex = /^(https?:\/\/)?([\w.-]+)\.([a-z]{2,6})(\/[\w.-]*)*\/?(\?([\w.-]+=[\w.-]+&?)*)?(#(\w*))?$/;
+    if (this.url.match(urlRegex)) this.isButtonDisabled = false;
+    else this.isButtonDisabled = true;
+  }
 
   displayedResponseData: IDisplayResponseData = {
     responseTime: '',
     url: '',
     responded: '',
+    date: '',
   }
 
-  searchedUrls: string[] = [];
+  searchedInfo: IDisplayResponseData[] = [];
 
   async searchUrl(): Promise<void> {
-    if (this.searchedUrls.includes(this.url)) {
-      this.searchedUrls = this.searchedUrls.filter((u) => u !== this.url)
-    } else if
-      (this.searchedUrls.length === 3) {
-      this.searchedUrls.pop();
+    this.urlToRequest = this.url;
+    this.url = '';
+    this.isButtonDisabled = true;
+    this.loading = true;
+    if
+      (this.searchedInfo.length === 4) {
+      this.searchedInfo.pop();
     }
-    this.searchedUrls.unshift(this.url);
 
     const token: string | null = localStorage.getItem('token');
 
@@ -39,12 +52,14 @@ export class MainComponent {
       this.router.navigate(['/']);
     }
     else {
-      const responseTime: IResponseTime = await ResponseTimeService.responseTime(this.url, token);
+      const responseTime: IResponseTime = await ResponseTimeService.responseTime(this.urlToRequest, token);
       if (responseTime.statusCode === 401) {
         this.router.navigate(['/']);
       }
       else {
         this.displayedResponseData = displayResponseData(responseTime);
+        this.searchedInfo.unshift(this.displayedResponseData);
+        this.loading = false;
       }
     }
   }

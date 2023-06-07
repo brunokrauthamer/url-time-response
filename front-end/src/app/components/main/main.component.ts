@@ -23,11 +23,13 @@ export class MainComponent {
 
   // Função chamada quando ocorre uma alteração no campo de URL
   handleUrlChange(): void {
-    // Expressão regular para validar o formato da URL
+    // Expressões regulares para validar o formato da URL
     const urlRegex = /^(https?:\/\/)?([\w.-]+)\.([a-z]{2,6})(\/[\w.-]*)*\/?(\?([\w.-]+=[\w.-]+&?)*)?(#(\w*))?$/;
+    const localHostRegex = /http:\/\/localhost:\d+/;
+
 
     // Verifica se a URL informada corresponde ao formato esperado e habilita/desabilita o botão de pesquisa
-    if (this.url.match(urlRegex)) this.isButtonDisabled = false;
+    if (this.url.match(urlRegex) || this.url.match(localHostRegex)) this.isButtonDisabled = false;
     else this.isButtonDisabled = true;
   }
 

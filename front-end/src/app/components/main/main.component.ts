@@ -25,7 +25,7 @@ export class MainComponent {
   handleUrlChange(): void {
     // Expressões regulares para validar o formato da URL
     const urlRegex = /^(https?:\/\/)?([\w.-]+)\.([a-z]{2,6})(\/[\w.-]*)*\/?(\?([\w.-]+=[\w.-]+&?)*)?(#(\w*))?$/;
-    const localHostRegex = /http:\/\/localhost:\d+/;
+    const localHostRegex = /https?:\/\/localhost:\d+/;
 
 
     // Verifica se a URL informada corresponde ao formato esperado e habilita/desabilita o botão de pesquisa

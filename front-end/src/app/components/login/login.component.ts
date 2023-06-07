@@ -22,23 +22,29 @@ export class LoginComponent {
   username: string = '';
   password: string = '';
 
+  // Deixa a mensagem de credenciais inválidas oculta
   invalidCredentialsMessage: boolean = false;
 
   async login(): Promise<void> {
-
+    // Cria um objeto com as credenciais de usuário
     const credentials: ICredentials = { username: this.username, password: this.password }
-    const axiosResponse = await LoginService.login(credentials);
-    console.log(axiosResponse);
 
+    // Obtém a resposta do servidor para a tentativa de login
+    const axiosResponse = await LoginService.login(credentials);
+
+    // Habilita a mensagem de credenciais inválidas caso sejam
     if (axiosResponse.statusCode === 404) {
       this.invalidCredentialsMessage = true;
     }
 
     if (axiosResponse.statusCode === 200) {
+      // Desabilita a mensagem de credenciais inválidas caso sejam válidas
       this.invalidCredentialsMessage = false;
 
+      // Armazena o token no localStorage
       localStorage.setItem('token', axiosResponse.token);
 
+      // Redireciona a aplicação para a tela principal
       this.router.navigate(['/main']);
     }
   }

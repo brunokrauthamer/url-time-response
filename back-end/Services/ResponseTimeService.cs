@@ -37,7 +37,7 @@ namespace ResponseTime.Services
                     return responseTimeInfo;
                 }
             }
-            catch (WebException ex)
+            catch (WebException)
             {
                 stopwatch.Stop();
                 TimeSpan responseTime = stopwatch.Elapsed;
